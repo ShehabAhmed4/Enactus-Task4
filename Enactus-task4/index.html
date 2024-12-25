@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Paragraphs</title>
+</head>
+<body>
+    <h1>Dynamic Paragraphs</h1>
+    <p>This is paragraph 1.</p>
+    <p>This is paragraph 2.</p>
+    <p>This is paragraph 3.</p>
+    <p>This is paragraph 4.</p>
+    <input type="text" id="colorInput" placeholder="Enter color" />
+    <input type="number" id="fontSizeInput" placeholder="Enter font size (px)" />
+    <button onclick="applyStyles()">Apply Styles</button>
+</body>
+<script>
+    function applyStyles() {
+        const color = document.getElementById('colorInput').value;
+        const fontSize = document.getElementById('fontSizeInput').value;
+
+        const paragraphs = document.querySelectorAll('p');
+        paragraphs.forEach(paragraph => {
+            paragraph.style.color = color;
+            paragraph.style.fontSize = fontSize + 'px';
+        });
+    }
+</script>
+</html>
